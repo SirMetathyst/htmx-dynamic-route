@@ -1,0 +1,26 @@
+{{define "get"}}
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>{{ template "title" . }}</title>
+        <link rel="stylesheet" href="/static/css/water.css" />
+        <script src="/static/js/htmx.min.js"></script>
+    </head>
+
+    <body>
+    {{ template "body" . }}
+    </body>
+
+    </html>
+{{end}}
+
+{{define "nav"}}
+    <nav hx-target="closest body">
+        <ol>
+            <li><a href="/" hx-get="/?nav" hx-push-url="/">About</a></li>
+            <li><a href="/todos" hx-get="/todos?nav" hx-push-url="/todos">Todos</a></li>
+        </ol>
+    </nav>
+{{end}}
